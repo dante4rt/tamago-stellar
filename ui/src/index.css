@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Retro 8-bit Mario-inspired color palette */
+    --background: 40 40% 92%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    /* Mario Red - Primary action color */
+    --primary: 2 85% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Sky Blue - Secondary color */
+    --secondary: 201 100% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 20% 82%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Coin Gold - Accent color */
+    --accent: 48 100% 49%;
+    --accent-foreground: 0 0% 13%;
+
+    /* Retro Green - Success/Grass */
+    --success: 145 100% 33%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 13%;
+    --input: 0 0% 100%;
+    --ring: 2 85% 52%;
+
+    --radius: 0.25rem;
+
+    /* Retro game-specific tokens */
+    --pixel-shadow: 4px 4px 0px hsl(0 0% 0% / 0.25);
+    --pixel-border: 4px;
+    --brick: 14 100% 45%;
+    --coin: 48 100% 49%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark retro theme - night game mode */
+    --background: 240 20% 12%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 15% 16%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 15% 16%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 2 85% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 201 100% 43%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 15% 22%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 48 100% 49%;
+    --accent-foreground: 0 0% 13%;
+
+    --success: 145 100% 33%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 25%;
+    --input: 240 15% 20%;
+    --ring: 2 85% 52%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-pixel;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer utilities {
+  .pixel-shadow {
+    box-shadow: var(--pixel-shadow);
+  }
+
+  .pixel-border {
+    border: var(--pixel-border) solid hsl(var(--border));
+  }
+
+  .pixel-text-shadow {
+    text-shadow: 2px 2px 0px hsl(0 0% 0% / 0.5);
+  }
+}
